@@ -3,8 +3,9 @@ numpy
 matplotlib
 seaborn
 scikit-learn
-xgboost
+xgboost  # optional - falls back to sklearn HistGradientBoosting
 imbalanced-learn
 scipy
 plotly
 missingno
+joblib

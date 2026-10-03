@@ -10,7 +10,7 @@ The idea is to predict whether an online order will be delivered **after the est
 |------|------|--------|
 | 1 | Project planning and strategy design | ✅ Done |
 | 2 | EDA and visualization framework design | ✅ Done |
-| 3 | Feature engineering and model building | ⏳ Upcoming |
+| 3 | ML model development and evaluation plan | ✅ Done |
 | 4 | Evaluation, insights and final report | ⏳ Upcoming |
 
 ## Week 1 – Project Plan
@@ -70,6 +70,25 @@ run_full_eda(df, target="is_late", out_dir="eda_output")
 ![Bivariate](week2/images/w2_fig4_bivariate.png)
 ![Multivariate](week2/images/w2_fig5_multivariate.png)
 
+## Week 3 – ML Model Development and Evaluation Plan
+
+Report: [`docs/Week3_ML_Model_Plan_Anish_Goyal.docx`](docs/Week3_ML_Model_Plan_Anish_Goyal.docx)
+
+It covers problem definition and justification, preprocessing (cleaning, scaling, encoding, feature engineering and selection, class imbalance), candidate models (Logistic Regression, Decision Tree, Random Forest, XGBoost) and why gradient boosting was chosen, training and hyperparameter tuning, evaluation metrics (accuracy, precision, recall, F1, ROC-AUC, PR-AUC), time-series cross-validation, and an optional deployment and maintenance plan.
+
+**Code in `week3/`**
+
+- `ml_pipeline.py` – scikit-learn implementation of the plan: time-based split → `ColumnTransformer` preprocessing → model comparison with `TimeSeriesSplit` → `RandomizedSearchCV` tuning → threshold selection on validation → one final test evaluation → saves the pipeline with `joblib`.
+- `diagrams.py` – makes the Week 3 diagrams.
+
+```bash
+python week3/ml_pipeline.py --demo                    # checks the pipeline runs (simulated data, scores not meaningful)
+python week3/ml_pipeline.py --data orders_clean.csv   # real cleaned data
+```
+
+![ML workflow](week3/images/w3_fig1_workflow.png)
+![Validation](week3/images/w3_fig3_validation.png)
+
 ## Problem setup (short version)
 
 - **Type:** Binary classification
@@ -85,6 +104,7 @@ run_full_eda(df, target="is_late", out_dir="eda_output")
 ├── docs/        # weekly reports
 ├── images/      # diagrams and charts
 ├── week2/       # EDA framework module + example charts
+├── week3/       # ML pipeline template + diagrams
 ├── diagrams.py  # script used to make the Week 1 diagrams
 ├── requirements.txt
 └── README.md

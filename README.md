@@ -11,7 +11,7 @@ The idea is to predict whether an online order will be delivered **after the est
 | 1 | Project planning and strategy design | ✅ Done |
 | 2 | EDA and visualization framework design | ✅ Done |
 | 3 | ML model development and evaluation plan | ✅ Done |
-| 4 | Evaluation, insights and final report | ⏳ Upcoming |
+| 4 | Final report and insights presentation plan | ✅ Done |
 
 ## Week 1 – Project Plan
 
@@ -89,6 +89,20 @@ python week3/ml_pipeline.py --data orders_clean.csv   # real cleaned data
 ![ML workflow](week3/images/w3_fig1_workflow.png)
 ![Validation](week3/images/w3_fig3_validation.png)
 
+## Week 4 – Final Report and Insights Presentation Plan
+
+Report: [`docs/Week4_Final_Report_Anish_Goyal.docx`](docs/Week4_Final_Report_Anish_Goyal.docx)
+
+Executive summary, methodology overview, six key insights, actionable insights, a visualization plan, a presentation strategy for non-technical audiences (storyboard + slide-by-slide plan), recommendations, and limitations.
+
+- `week4/mockup_charts.py` – makes the mock-up charts used in the final report.
+
+> This is a hypothetical project – the numbers in the Week 4 charts are **illustrative mock-up values**, not real results.
+
+![Key numbers](week4/images/w4_fig1_kpis.png)
+![Distance vs promise](week4/images/w4_fig4_heatmap.png)
+![Storyboard](week4/images/w4_fig8_storyboard.png)
+
 ## Problem setup (short version)
 
 - **Type:** Binary classification
@@ -105,6 +119,7 @@ python week3/ml_pipeline.py --data orders_clean.csv   # real cleaned data
 ├── images/      # diagrams and charts
 ├── week2/       # EDA framework module + example charts
 ├── week3/       # ML pipeline template + diagrams
+├── week4/       # mock-up charts for final report
 ├── diagrams.py  # script used to make the Week 1 diagrams
 ├── requirements.txt
 └── README.md

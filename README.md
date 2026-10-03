@@ -9,7 +9,7 @@ The idea is to predict whether an online order will be delivered **after the est
 | Week | Task | Status |
 |------|------|--------|
 | 1 | Project planning and strategy design | ✅ Done |
-| 2 | Data cleaning and exploratory data analysis | ⏳ Upcoming |
+| 2 | EDA and visualization framework design | ✅ Done |
 | 3 | Feature engineering and model building | ⏳ Upcoming |
 | 4 | Evaluation, insights and final report | ⏳ Upcoming |
 
@@ -48,6 +48,28 @@ pip install matplotlib
 python diagrams.py
 ```
 
+## Week 2 – EDA and Visualization Framework
+
+Report: [`docs/Week2_EDA_Framework_Anish_Goyal.docx`](docs/Week2_EDA_Framework_Anish_Goyal.docx)
+
+It covers what EDA is and why it matters, the data types expected in the dataset, an 8-step EDA framework (univariate, bivariate and multivariate analysis, missing data and outlier handling), the visualization strategy, the libraries used, and a plan for reporting the findings.
+
+**Code in `week2/`**
+
+- `eda_framework.py` – reusable EDA functions that work on **any** pandas DataFrame (overview, missing value report, IQR outlier report, numeric and categorical plots, feature-vs-target plots, correlation heatmap, `run_full_eda()`).
+- `example_charts.py` – makes the example charts used in the report.
+
+> The Week 2 charts use a small **simulated sample** with the same columns as the expected cleaned dataset. They only show the chart types; the real analysis comes next.
+
+```python
+from week2.eda_framework import run_full_eda
+run_full_eda(df, target="is_late", out_dir="eda_output")
+```
+
+![EDA framework](week2/images/w2_fig1_framework.png)
+![Bivariate](week2/images/w2_fig4_bivariate.png)
+![Multivariate](week2/images/w2_fig5_multivariate.png)
+
 ## Problem setup (short version)
 
 - **Type:** Binary classification
@@ -62,6 +84,7 @@ python diagrams.py
 ```
 ├── docs/        # weekly reports
 ├── images/      # diagrams and charts
+├── week2/       # EDA framework module + example charts
 ├── diagrams.py  # script used to make the Week 1 diagrams
 ├── requirements.txt
 └── README.md

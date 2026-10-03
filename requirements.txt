@@ -5,3 +5,6 @@ seaborn
 scikit-learn
 xgboost
 imbalanced-learn
+scipy
+plotly
+missingno
